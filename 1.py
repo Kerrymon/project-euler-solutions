@@ -7,7 +7,7 @@ sumn = 0
 i = 0
 while i < 999:
     i += 1
-    # проверяем числа на делимость полным перебором
+    # check for divisibility
     if i % 3 == 0 or i % 5 == 0:
         sumn += i
 print(sumn)

@@ -8,21 +8,20 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 max = 4000000
 sumn = 0
-# a и b - переменные, которые будут меняться на различные члены ряда фибоначчи
+# a and b - various members of the Fibonacci series
 a = 1
 b = 2
-# пока число фибоначчи не превышает 4 миллиона выполняется цикл
+# while fibonacci number exceeds 4 millons
 while a <= max:
-    # если число больше 4 миллионов - выходим из цикла
     if (a % 2 == 0) and a >= max and (b % 2 == 0) and b >= max:
         break
-    # проверяем на четность и добавляем в сумму
+    # check the number for evenness
     if (a % 2 == 0):
         sumn += a
-    # проверяем на четность и добавляем в сумму
+    # check the number for evenness
     if (b % 2 == 0):
         sumn += b
-    # продолжаем ряд фибоначчи
+    # build a row further
     a = a + b
     b = a + b
 

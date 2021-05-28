@@ -6,14 +6,13 @@ What is the smallest positive number that is evenly divisible by all of the numb
 i = 21
 
 while True:
-     score = 0
+     score = 1
      for delitel in range(1, 21):
          if i % delitel == 0:
              score += 1
-             if score == 19:
+             if score == 20:
                  print(i, "Число, которое делится на все числа от 1 до 20")
                  break
-
          else:
              break
 
