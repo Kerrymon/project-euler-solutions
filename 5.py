@@ -3,10 +3,12 @@
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"""
 
-i = 21
+from datetime import datetime
 
+i = 21
+start_time = datetime.now()
 while True:
-     score = 1
+     score = 0
      for delitel in range(1, 21):
          if i % delitel == 0:
              score += 1
@@ -17,3 +19,8 @@ while True:
              break
 
      i += 1
+     if score == 20:
+         break
+end_time = datetime.now()
+# Works in two minutes, need some optimization
+print('Duration: {}'.format(end_time - start_time))
