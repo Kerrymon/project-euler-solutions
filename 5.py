@@ -5,8 +5,9 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 from datetime import datetime
 
-i = 21
+
 start_time = datetime.now()
+i = 21
 while True:
      score = 0
      for delitel in range(1, 21):
