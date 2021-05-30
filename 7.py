@@ -3,26 +3,27 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 What is the 10 001st prime number?"""
 
-def primenum(num):
-    delitel = 2
-    score = 0
-    while delitel != num:
-        if num % delitel == 0:
-            break
-        else:
-            score += 1
-        if score == (num - delitel):
-            return num
-        delitel += 1
+from datetime import datetime
+
+import math
+start_time = datetime.now()
+
+def is_prime(n):
+    for i in range(2, int(math.sqrt(n) + 1)):
+        if n % i == 0:
+            return 0
+    return n
 
 
 j = 1
 for i in range(3, 10000000000):
-    if primenum(i) == None:
+    if is_prime(i) == 0:
         continue
     else:
         j += 1
         if j == 10001:
-            print("10001-ое простое число - ", primenum(i))
+            print("10001-ое простое число - ", is_prime(i))
             break
 
+end_time = datetime.now()
+print('Duration: {}'.format(end_time - start_time))
