@@ -1,4 +1,4 @@
-""" Euler Problem 6
+""" Euler Problem #6:
 Сумма квадратов первых десяти натуральных чисел равна
 
 1^2 + 2^2 + ... + 10^2 = 385
@@ -12,10 +12,9 @@
 
 sumi = 0
 sumj = 0
-
-for i in range(1, 100000001):
+for i in range(1, 101):
     sumi += i
-for j in range(1, 100000001):
+for j in range(1, 101):
     sumj += j*j
 
 print(sumi*sumi - sumj)
