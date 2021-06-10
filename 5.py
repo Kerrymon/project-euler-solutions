@@ -7,20 +7,22 @@ from datetime import datetime
 
 
 start_time = datetime.now()
-i = 21
+
+i = 20
+# bruteforce
 while True:
      score = 0
-     for delitel in range(1, 21):
+     for delitel in range(11, 21):
          if i % delitel == 0:
              score += 1
-             if score == 20:
+             if score == 9:
                  print(i, "Число, которое делится на все числа от 1 до 20")
                  break
          else:
              break
 
-     i += 1
-     if score == 20:
+     i += 2
+     if score == 9:
          break
 end_time = datetime.now()
 # Works in two minutes, need some optimization

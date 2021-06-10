@@ -13,8 +13,8 @@ def is_prime(n):
 
 
 sumn = 0
+# check every num: prime is it?
 for i in range(2, 2000000):
     sumn += is_prime(i)
-    print(i, sumn)
 
 print(sumn)

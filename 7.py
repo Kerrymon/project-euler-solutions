@@ -8,6 +8,7 @@ from datetime import datetime
 import math
 start_time = datetime.now()
 
+# function that checks number on prime
 def is_prime(n):
     for i in range(2, int(math.sqrt(n) + 1)):
         if n % i == 0:
@@ -16,7 +17,8 @@ def is_prime(n):
 
 
 j = 1
-for i in range(3, 10000000000):
+# check every odd number prime it or not
+for i in range(3, 10000000000, 2):
     if is_prime(i) == 0:
         continue
     else:
