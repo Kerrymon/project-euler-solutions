@@ -10,8 +10,8 @@ import copy
 
 
 def prime(number):
-    if number == 1:
-        return False
+    if number == 1 or number == 0:
+        return True
     for i in range(2, int(sqrt(number))+1):
         if number % i == 0:
             return True
@@ -26,7 +26,31 @@ def factorial(number):
 
     return fact_sum
 
+def find_eight(prime_number_count, range_find):
+    for i in range(10000, range_find):
+        print(i)
+        n = [int(x) for x in str(i)]
+        changed = copy.deepcopy(n)
+        for i in range(0, len(n)-1):
+            for j in range(1, len(n)):
+                if i>=j:
+                    continue
+                changed[i] = '*'
+                changed[j] = '*'
+               # print(changed)
+                prime_score = 0
+                for k in range(0, 10):
+                    new_digit_lst = [k if x == '*' else x for x in changed]
+                    new_digit = int(''.join(str(i) for i in new_digit_lst))
 
+                    if not prime(new_digit):
+                        prime_score += 1
+
+                if prime_score == prime_number_count:
+                    print(new_digit, changed, prime_score)
+                    return new_digit, changed, prime_score
+                print(new_digit, changed, prime_score)
+                changed = copy.deepcopy(n)
 
 if __name__ == '__main__':
     """TESTING prime Function
@@ -41,32 +65,8 @@ if __name__ == '__main__':
         else:
             print("TEST FAILED!")
     """
-    for i in range(0, 1000):
-        n = [int(x) for x in str(i)]
-        changed = copy.deepcopy(n)
-        for i in range(0, len(n)-1):
-            for j in range(1, len(n)):
-                if i>=j:
-                    continue
-                changed[i] = '*'
-                changed[j] = '*'
-               # print(changed)
-                prime_score = 0
-                for k in range(0, 10):
-                    new_digit_lst = [k if x == '*' else x for x in changed]
-                    new_digit = int(''.join(str(i) for i in new_digit_lst))
-                    if prime(new_digit) == True:
-                        prime_score += 1
+    print(find_eight(7, 10000000))
 
-                if prime_score == 7:
-                    print(changed)
-
-
-
-                    print(new_digit)
-
-
-                changed = copy.deepcopy(n)
 
 
 
